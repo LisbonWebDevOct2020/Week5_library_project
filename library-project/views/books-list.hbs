@@ -1,0 +1,15 @@
+<h1>Book list</h1>
+<hr>
+{{#each books}}
+  <div>
+    <h3>{{title}}</h3>
+    <p>By: {{author.name}}</p>
+    <!-- route param book id -->
+    <a href="/books/{{_id}}">See details</a>
+    <a href="/books/{{_id}}/edit">Edit</a>
+    <!-- we can only have post request on forms -->
+    <form action="/books/{{_id}}/delete" method="POST">
+      <button type="submit">Delete</button>
+    </form>
+  </div>
+{{/each}}

@@ -1,0 +1,18 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+<a href="/books">List of books</a>
+<a href="/books/create">Create book</a>
+<a href="/authors/create">Create author</a>
+<a href="/signup">Signup</a>
+
+
+<!-- display welcome username, if user is present -->
+{{#if user}}
+  Welcome {{user.username}}
+  <form action="/logout" method="POST">
+    <button type="submit">Logout</button>
+  </form>
+  <a href="/private">Private</a>
+{{else}}
+  <a href="/login">Login</a>
+{{/if}}
